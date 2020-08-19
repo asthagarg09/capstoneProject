@@ -1,0 +1,61 @@
+<app-header></app-header>
+<mat-drawer-container>
+  <mat-drawer mode="side" opened>
+    <app-sidebar></app-sidebar>
+  </mat-drawer>
+  <mat-drawer-content>
+    <form [formGroup]="uploadForm" (ngSubmit)="submitForm()">
+
+      <div class="form-group">
+
+        <label for="name">Name</label>
+
+        <input formControlName="name" id="name" type="text" class="form-control">
+
+        <div *ngIf="f.name.touched && f.name.invalid">
+
+          <div *ngIf="f.name.errors.required">Filename is required</div>
+
+        </div>
+
+      </div>
+
+      <div class="form-group">
+
+        <label for="file">File</label>
+
+        <input formControlName="file" id="file" type="file" multiple class="form-control"
+          (change)="onFileChange($event)">
+
+        <div *ngIf="f.file.touched && f.file.invalid">
+          <div *ngIf="f.file.errors.required">Choose a file</div>
+        </div>
+      </div>
+      <button type="submit">Upload</button>
+
+    </form>
+    <table>
+      <tr *ngFor="let x of data[0]">
+        <td> {{ x.courseID }} </td>
+        <td> {{ x.name }} </td>
+        <td><a href="http://localhost/capstoneProject/php/uploads/{{x.name}}/{{x.upload}}" download> {{ x.upload }}</a>
+        </td>
+      </tr>
+
+    </table>
+    <br><br>
+    <h1>Update status of courses</h1>
+    <form [formGroup]="visibleForm1" (ngSubmit)="submitForm1()">
+      <input type="text" formControlName="idname" placeholder="Insert id of the course to be updated">
+      <br><br>
+      <input class="radiobtn" type="radio" value="on" formControlName="status"><label>
+        Visible</label>
+      <br>
+      <input class="radiobtn" type="radio" value="off" formControlName="status"><label>
+        Hidden
+      </label>
+      <button type="submit" class="btn btn-danger btn-lg btn-block">Save</button>
+    </form>
+  </mat-drawer-content>
+</mat-drawer-container>
+<app-footer></app-footer>

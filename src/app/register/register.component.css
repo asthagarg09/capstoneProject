@@ -1,0 +1,35 @@
+footer{
+    background: #ffffff url("../../assets/images/footer.jpg") no-repeat;
+    background-size: 100%;
+    color: cornsilk;
+    text-align: center;
+    padding-top: 5px;
+}
+
+.row2 {
+    display: flex;
+  }
+  
+  .column2 {
+    flex: 33%;
+    text-align: center;
+    padding: 10PX;
+  }
+  .column2 img{
+      padding: 5px;
+    width: 50px;
+    height: 50px;
+}
+.col{
+    margin: auto;
+    margin-left: 30%;
+    margin-right: 30%;
+    margin-top:7%;
+    margin-bottom: 7%;
+}
+h2{
+    margin-top:1%;
+}
+.row{
+    margin:0px;
+}

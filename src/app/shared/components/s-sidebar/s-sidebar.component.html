@@ -1,0 +1,17 @@
+<mat-nav-list>
+    <div class="profile-card">
+        <div class="header">
+            {{email}}
+
+        </div>
+        <img src="../../../../assets/images/usericon.png" alt="User">
+    </div>
+
+    <mat-divider></mat-divider>
+    <h2 matSubheader>Pages</h2>
+    <a mat-list-item routerLinkActive="List-item-active" routerLink="/student-dashboard/{{email}}">Dashboard</a>
+    <a mat-list-item routerLinkActive="List-item-active" routerLink="/student-courses/{{email}}">Student Courses</a>
+    <a mat-list-item routerLinkActive="List-item-active" routerLink="/student-quizes/{{email}}">Student Quizzes</a>
+
+
+</mat-nav-list>

@@ -1,0 +1,44 @@
+<app-s-header></app-s-header>
+<mat-drawer-container>
+    <mat-drawer mode="side" opened>
+        <app-s-sidebar></app-s-sidebar>
+    </mat-drawer>
+    <mat-drawer-content>
+        <p align="center">Welcome to Student Courses</p>
+        {{email}}
+        <table>
+            <tr *ngFor="let x of data[0]">
+                <td>{{x.name}}
+                    <!--<form [formGroup]="angForm" (ngSubmit)="postdata(angForm)" autocomplete="off" >
+                        <div class="form-group" >
+                        <label for="cname">Name</label>
+                        <input type="text" name="cname" formControlName="cname" autocomplete="off" class="form-control input-sm" value="{{ x.name }}">
+                        <button type="submit" class="btn btn-success" >Register</button>
+                        </div>
+                        
+                        </form>-->
+
+                </td>
+            </tr>
+
+        </table>
+        <form [formGroup]="angForm" (ngSubmit)="postdata(angForm)" autocomplete="off">
+            <div class="form-group">
+                <input type="hidden" formControlName="cemail" autocomplete="off" class="form-control input-sm"
+                    value="{{email}}">
+                <label for="cname">Name</label>
+                <input type="text" formControlName="cname" autocomplete="off" class="form-control input-sm">
+                <button type="submit" class="btn btn-success">Register</button>
+            </div>
+
+        </form>
+
+        <table>
+            <tr *ngFor="let y of data1[0]">
+                <td><a href="http://localhost/capstoneProject/php/uploads/{{y.course}}/{{y.upload}}" download>
+                        {{ y.upload }}</a></td>
+            </tr>
+        </table>
+    </mat-drawer-content>
+</mat-drawer-container>
+<app-sfooter></app-sfooter>

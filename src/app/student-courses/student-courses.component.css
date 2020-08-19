@@ -1,0 +1,48 @@
+:host{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+mat-drawer{
+    width: 350px;
+}
+mat-drawer-container{
+    height: 100%;
+}
+mat-drawer-content{
+    padding: 20px;
+    margin-left: 370px !important;
+}
+@media only screen and (max-width: 768px){
+    :host{
+        display: flex;
+        flex-direction: column;
+        flex-basis:100%;
+    }
+    app-header,app-footer,app-sidebar{
+        width:100% !important;
+    }
+
+    mat-drawer-container{
+        overflow:auto !important;
+    }
+    
+    mat-drawer{
+        
+        width:100% !important;
+        display: flex;
+        flex-direction: column;
+        position: relative !important;
+        margin:0px;
+    }
+    mat-drawer.mat-drawer-side{
+        height: 100%;
+        width: 100%;
+    }
+    mat-drawer-content{
+        margin-left: 0 !important;
+        height: 100% !important;
+        margin-bottom: 2% !important;
+        
+    }
+}

@@ -1,0 +1,21 @@
+<mat-toolbar color="primary">
+    <mat-toolbar-row>
+     <span>Online Edu</span>
+        <div fxFlex fxLayout="row" fxLayoutAlign="flex-end">
+            <ul fxLayout="row" fxLayoutGap="20px">
+                <li>
+                    <button mat-button [matMenuTriggerFor]="menu">
+                        <mat-icon>person_outline</mat-icon>
+                    </button>
+                    <mat-menu #menu="matMenu">
+                        <button mat-menu-item type="button" *ngIf="logoutbtn" (click)="logout()">
+                            <mat-icon>exit_to_app</mat-icon>
+                            Signout
+                        </button>
+                    </mat-menu>
+                </li>
+
+            </ul>
+        </div>
+    </mat-toolbar-row>
+</mat-toolbar>

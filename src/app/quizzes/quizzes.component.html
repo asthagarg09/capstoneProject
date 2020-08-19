@@ -1,0 +1,71 @@
+<app-header></app-header>
+<mat-drawer-container>
+  <mat-drawer mode="side" opened>
+    <app-sidebar></app-sidebar>
+  </mat-drawer>
+  <mat-drawer-content>
+    <form [formGroup]="uploadForm" (ngSubmit)="submitForm()">
+
+      <div class="form-group">
+
+        <label for="name">Name</label>
+
+        <input formControlName="name" id="name" type="text" class="form-control">
+
+        <div *ngIf="f.name.touched && f.name.invalid">
+
+          <div *ngIf="f.name.errors.required">Filename is required</div>
+
+        </div>
+
+      </div>
+
+      <div class="form-group">
+
+        <label for="filename">File</label>
+
+        <input formControlName="filename" id="filename" type="file" multiple class="form-control"
+          (change)="onFileChange($event)">
+
+        <div *ngIf="f.filename.touched && f.filename.invalid">
+          <div *ngIf="f.filename.errors.required">Choose a file</div>
+        </div>
+      </div>
+
+      <button type="submit">Upload</button>
+
+    </form>
+    <table>
+      <tr *ngFor="let x of data[0]">
+        <td> {{ x.id }} </td>
+        <td> {{ x.name }} </td>
+        <td><a href="http://localhost/capstoneProject/php/quiz/{{x.name}}/{{x.filename}}" download> {{ x.filename }}</a>
+        </td>
+        <!--<td><form [formGroup]="visibleform">
+                <label>
+                  <input type="radio" value="on" formControlName="status">
+                    <span>Visible</span>
+                </label>
+                <label>
+                  <input type="radio" value="off" formControlName="status">
+                    <span>Hidden</span>
+                </label>
+             </form>     
+            </td>  -->
+      </tr>
+
+    </table>
+    <form [formGroup]="visibleForm" (ngSubmit)="submitForm1()">
+      <input type="text" formControlName="idname">
+      <br>
+      <input class="radiobtn" type="radio" value="on" formControlName="status"><label>
+        Visible</label>
+      <br>
+      <input class="radiobtn" type="radio" value="off" formControlName="status"><label>
+        Hidden
+      </label>
+      <button type="submit" class="btn btn-danger btn-lg btn-block">Save</button> </form>
+    <!--<a mat-list-item routerLink="/edit-quiz">Edit</a>-->
+  </mat-drawer-content>
+</mat-drawer-container>
+<app-footer></app-footer>

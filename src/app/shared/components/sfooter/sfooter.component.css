@@ -1,0 +1,22 @@
+footer{
+    
+    color:red;
+    text-align: center;
+    background-color:#f8f9fa ;
+    padding: 3px;
+}
+
+.row2 {
+    display: flex;
+  }
+  
+  .column2 {
+    flex: 33%;
+    text-align: center;
+    padding: 8PX;
+  }
+  .column2 img{
+      padding: 5px;
+    width: 40px;
+    height: 40px;
+}

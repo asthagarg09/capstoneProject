@@ -1,0 +1,77 @@
+:host{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+mat-drawer{
+    width: 350px;
+}
+mat-drawer-container{
+    height: 100%;
+}
+mat-drawer-content{
+    margin-top: 10px;
+    margin-left: 370px !important;
+
+}
+input{
+    width: 50%;
+}
+.radiobtn{
+    width:inherit;
+}
+button{
+    width: inherit;
+}
+
+footer{
+    
+    color:red;
+    text-align: center;
+    background-color:#f8f9fa ;
+    padding: 3px;
+}
+
+.row2 {
+    display: flex;
+  }
+  
+  .column2 {
+    flex: 33%;
+    text-align: center;
+    padding: 8PX;
+  }
+  .column2 img{
+      padding: 5px;
+    width: 40px;
+    height: 40px;
+}
+@media only screen and (max-width: 768px){
+    :host{
+        display: flex;
+        flex-direction: column;
+        flex-basis:100%;
+        
+    }
+    app-header,app-footer,app-sidebar{
+        width:100% !important;
+    }
+    
+    mat-drawer{
+        
+        width:100% !important;
+        display: flex;
+        flex-direction: column;
+        position: relative !important;
+        margin:0px;
+    }
+    mat-drawer.mat-drawer-side{
+        height: 200px;
+        width: 100%;
+    }
+    mat-drawer-content{
+        margin-left: 0 !important;
+        height: 100%;
+        margin-bottom: 2% !important;
+    }
+}

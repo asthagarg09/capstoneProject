@@ -1,0 +1,29 @@
+<app-s-header></app-s-header>
+<mat-drawer-container>
+  <mat-drawer mode="side" opened>
+    <app-s-sidebar></app-s-sidebar>
+  </mat-drawer>
+  <mat-drawer-content>
+    <p align="center">Welcome to Student Quiz</p>
+    <table>
+      <tr *ngFor="let x of data[0]">
+        <td> {{ x.name }} </td>
+        <td><a href="http://localhost/capstoneProject/php/quiz/{{x.name}}/{{x.filename}}" download> {{ x.filename }}</a>
+        </td>
+        <!--<td><form [formGroup]="visibleform">
+                  <label>
+                    <input type="radio" value="on" formControlName="status">
+                      <span>Visible</span>
+                  </label>
+                  <label>
+                    <input type="radio" value="off" formControlName="status">
+                      <span>Hidden</span>
+                  </label>
+               </form>     
+              </td>  -->
+      </tr>
+
+    </table>
+  </mat-drawer-content>
+</mat-drawer-container>
+<app-sfooter></app-sfooter>

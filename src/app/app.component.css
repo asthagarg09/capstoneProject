@@ -1,0 +1,21 @@
+.navbar{
+    margin: 0;
+    padding: 0px;
+    background-color: black;
+}
+.nav-link{
+    color: black !important;
+}
+
+@media only screen and (max-width: 1024px){
+    #navbarsExample{
+        text-align: center;
+    }
+    .navbar-collapse.collapse {
+        display:block !important;
+        text-align: center;
+    }
+
+}
+
+
